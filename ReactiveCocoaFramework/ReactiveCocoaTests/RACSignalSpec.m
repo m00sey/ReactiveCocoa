@@ -3611,7 +3611,7 @@ describe(@"-not", ^{
 		[subject sendNext:@NO];
 		[subject sendNext:@YES];
 		[subject sendCompleted];
-		NSArray *results = [[subject not] toArray];
+		NSArray *results = [[subject NOT] toArray];
 		NSArray *expected = @[ @YES, @NO ];
 		expect(results).to.equal(expected);
 	});
@@ -3626,7 +3626,7 @@ describe(@"-and", ^{
 		[subject sendNext:RACTuplePack(@YES, @YES, @YES)];
 		[subject sendCompleted];
 		
-		NSArray *results = [[subject and] toArray];
+		NSArray *results = [[subject AND] toArray];
 		NSArray *expected = @[ @NO, @NO, @YES ];
 		
 		expect(results).to.equal(expected);
@@ -3641,7 +3641,7 @@ describe(@"-or", ^{
 		[subject sendNext:RACTuplePack(@NO, @NO, @NO)];
 		[subject sendCompleted];
 		
-		NSArray *results = [[subject or] toArray];
+		NSArray *results = [[subject OR] toArray];
 		NSArray *expected = @[ @YES, @NO ];
 		
 		expect(results).to.equal(expected);
