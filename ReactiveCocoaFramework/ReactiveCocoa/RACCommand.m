@@ -189,7 +189,7 @@ const NSInteger RACCommandErrorNotEnabled = 1;
 	RACSignal *moreExecutionsAllowed = [RACSignal
 		if:RACObserve(self, allowsConcurrentExecution)
 		then:[RACSignal return:@YES]
-		else:[immediateExecuting not]];
+		else:[immediateExecuting NOT]];
 	
 	if (enabledSignal == nil) {
 		enabledSignal = [RACSignal return:@YES];
@@ -202,7 +202,7 @@ const NSInteger RACCommandErrorNotEnabled = 1;
 	
 	_immediateEnabled = [[RACSignal
 		combineLatest:@[ enabledSignal, moreExecutionsAllowed ]]
-		and];
+		AND];
 	
 	_enabled = [[[[[self.immediateEnabled
 		take:1]

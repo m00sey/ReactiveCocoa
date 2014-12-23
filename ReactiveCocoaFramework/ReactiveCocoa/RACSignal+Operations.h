@@ -637,21 +637,21 @@ extern const NSInteger RACSignalErrorNoMatchingCase;
 /// the receiver sends anything other than NSNumbers.
 ///
 /// Returns a signal of inverted NSNumber-wrapped BOOLs.
-- (RACSignal *)not;
+- (RACSignal *)NOT;
 
 /// Performs a boolean AND on all of the RACTuple of NSNumbers in sent by the receiver.
 ///
 /// Asserts if the receiver sends anything other than a RACTuple of one or more NSNumbers.
 ///
 /// Returns a signal that applies AND to each NSNumber in the tuple.
-- (RACSignal *)and;
+- (RACSignal *)AND;
 
 /// Performs a boolean OR on all of the RACTuple of NSNumbers in sent by the receiver.
 ///
 /// Asserts if the receiver sends anything other than a RACTuple of one or more NSNumbers.
 /// 
 /// Returns a signal that applies OR to each NSNumber in the tuple.
-- (RACSignal *)or;
+- (RACSignal *)OR;
 
 /// Sends the result of calling the block with arguments as packed in each RACTuple
 /// sent by the receiver.
